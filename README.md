@@ -43,6 +43,10 @@ python3 install-skills.py --force
 
 本机技能更新后，需要将对应完整目录更新到仓库的 `skills/`，提交并推送；其他电脑再拉取并运行安装脚本。Git 不会自动同步用户技能目录。
 
+## 本地 Codex 插件
+
+`plugins/codex-auto-retry/` 提供一个仅在 Codex 运行时工作的自动继续插件：当 `Stop` Hook 识别到模型容量错误时，按退避间隔和次数上限继续当前任务。它不使用 macOS 系统级点击。安装和限制见 [插件说明](plugins/codex-auto-retry/README.md)。
+
 说明文件可以共享，软件依赖、插件连接和账号授权需要在各电脑单独配置。这些目录用于本地 Codex，普通 ChatGPT 网页聊天不会直接读取本机目录。
 
 技能目录结构和加载位置参考 [OpenAI 官方技能文档](https://learn.chatgpt.com/docs/build-skills)。

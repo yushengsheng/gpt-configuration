@@ -1,0 +1,29 @@
+{
+  "description": "在 Codex 模型容量错误时有限次自动继续。",
+  "hooks": {
+    "PostModelRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/auto_retry.py\"",
+            "timeout": 5,
+            "statusMessage": "记录模型容量错误"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/auto_retry.py\"",
+            "timeout": 90,
+            "statusMessage": "检查模型容量并准备自动重试"
+          }
+        ]
+      }
+    ]
+  }
+}

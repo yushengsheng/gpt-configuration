@@ -1,0 +1,7 @@
+{
+  "name": "codex-auto-retry",
+  "version": "0.1.1",
+  "description": "在 Codex 遇到模型容量错误时，按退避间隔和次数上限自动继续当前任务。",
+  "requires_local_executor": true,
+  "hooks": "./hooks/hooks.json"
+}
